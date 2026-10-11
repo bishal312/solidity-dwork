@@ -1,0 +1,55 @@
+{
+  "error.sol": {
+    "__sources__": {
+      "error.sol": {
+        "content": "// SPDX-License-Identifier: Unlicensed\r\n\r\npragma solidity >= 0.7.0;\r\n\r\ncontract error {\r\n    address public owner;\r\n    \r\n    constructor() {\r\n        owner = msg.sender;\r\n    }\r\n\r\n    function call() public view {\r\n        require(msg.sender == owner);\r\n    }\r\n}",
+        "file": "error.sol"
+      }
+    }
+  },
+  "types/registerUser.sol": {
+    "__sources__": {
+      "types/registerUser.sol": {
+        "content": "struct RegisterUsers {\n    string name;\n    uint8 age;\n    string email;\n}\n",
+        "file": "types/registerUser.sol"
+      }
+    }
+  },
+  "types/registerUsers.sol": {
+    "__sources__": {
+      "types/registerUsers.sol": {
+        "content": "struct RegisterUsers {\n    string name;\n    uint8 age;\n    string email;\n}\n",
+        "file": "types/registerUsers.sol"
+      }
+    }
+  },
+  "types/EmployerProfile.sol": {
+    "__sources__": {
+      "types/EmployerProfile.sol": {
+        "content": "\r\nstruct EmployerProfile {\r\n    uint256 id;\r\n    string name;\r\n    bool isHiring;\r\n    address wallet;\r\n}",
+        "file": "types/EmployerProfile.sol"
+      }
+    }
+  },
+  "contracts/EmployerProfile.sol": {
+    "__sources__": {
+      "contracts/EmployerProfile.sol": {
+        "content": "\r\nstruct EmployerProfile {\r\n    uint256 id;\r\n    string name;\r\n    bool isHiring;\r\n    address wallet;\r\n}",
+        "file": "contracts/EmployerProfile.sol"
+      }
+    }
+  },
+  "contracts/Dework.sol": {
+    "contracts/types/EmployerProfile.sol": "contracts/types/EmployerProfile.sol",
+    "__sources__": {
+      "contracts/Dework.sol": {
+        "content": "// SPDX-License-Identifier: GPL-3.0\npragma solidity =0.8.34;\n\nimport {EmployerProfile} from \"contracts/types/EmployerProfile.sol\";\n\ncontract Dework {\n    uint256 public connectFee = 100;\n\n    EmployerProfile[] public employerProfiles;\n\n    function getUserid() public view returns (uint256) {\n        return employerProfiles.length;\n    }\n\n    function registerEmployerProfile(string calldata _name) public {\n        uint256 empId = getUserid();\n\n        employerProfiles.push(\n            EmployerProfile({\n                id: empId,\n                name: _name,\n                isHiring: true,\n                wallet: msg.sender\n            })\n        );\n    }\n\n    // --- GETTER FUNCTIONS ---\n\n    /// @notice Fetch a single employer profile by ID/index\n    function getEmployerProfile(uint256 _id) public view returns (EmployerProfile memory) {\n        require(_id < employerProfiles.length, \"Employer profile does not exist\");\n        return employerProfiles[_id];\n    }\n\n    /// @notice Fetch all employer profiles at once\n    function getAllEmployerProfiles() public view returns (EmployerProfile[] memory) {\n        return employerProfiles;\n    }\n}\n",
+        "file": "contracts/Dework.sol"
+      },
+      "contracts/types/EmployerProfile.sol": {
+        "content": "\r\nstruct EmployerProfile {\r\n    uint256 id;\r\n    string name;\r\n    bool isHiring;\r\n    address wallet;\r\n}",
+        "file": "contracts/types/EmployerProfile.sol"
+      }
+    }
+  }
+}

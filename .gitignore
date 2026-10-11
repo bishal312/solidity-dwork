@@ -1,0 +1,8 @@
+/artifacts/
+/deps/
+/states/
+.states/
+remix-tests.sol
+remix_accounts.sol
+package.json
+package-lock.json

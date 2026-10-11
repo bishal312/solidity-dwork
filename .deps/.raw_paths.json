@@ -1,0 +1,8 @@
+{
+  "types@0.1.1/registerUser.sol": ".deps/npm/types@0.1.1/registerUser.sol",
+  "types@0.1.1/registerUsers.sol": ".deps/npm/types@0.1.1/registerUsers.sol",
+  "types@0.1.1/.sol": ".deps/npm/types@0.1.1/.sol",
+  "contracts@0.4.0/types/EmployerProfile.sol": ".deps/npm/contracts@0.4.0/types/EmployerProfile.sol",
+  "contracts@0.4.0/EmployerProfile.sol": ".deps/npm/contracts@0.4.0/EmployerProfile.sol",
+  "types@0.1.1/EmployerProfile.sol": ".deps/npm/types@0.1.1/EmployerProfile.sol"
+}
